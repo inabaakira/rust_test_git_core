@@ -26,7 +26,7 @@ pub struct FixedStringsMatcher {
     pattern: String,
 }
 impl FixedStringsMatcher {
-    pub fn new(pattern: Strin) -> FixedStringsMatcher {
+    pub fn new(pattern: String) -> FixedStringsMatcher {
         FixedStringsMatcher { pattern: pattern }
     }
 }
@@ -42,12 +42,12 @@ pub enum Matcher {
     FixedStrings(FixedStringsMatcher),
 }
 impl Matcher {
-    pub fn new(pattern String, is_fixed_string_mode: bool) -> Matcher {
+    pub fn new(pattern String, is_fixed_strings_mode: bool) -> Matcher {
         if is_fixed_strings_mode {
             Matcher::FixedStrings(FixedStringsMatcher::new(pattern.to_string()))
         }
         else {
-            Matched::ExtendedRegexp(ExtendedRegexpMatcher::new(pattern.to_string()))
+            Matcher::ExtendedRegexp(ExtendedRegexpMatcher::new(pattern.to_string()))
         }
     }
     pub fn execute(&self, line: &str) -> bool {
