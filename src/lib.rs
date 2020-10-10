@@ -17,7 +17,7 @@ impl ExtendedRegexpMatcher {
 }
 impl MatcherTrait for ExtendedRegexpMatcher {
     fn execute(&self, line: &str) -> bool {
-        self.patten.is_match(line)
+        self.pattern.is_match(line)
     }
 }
 
