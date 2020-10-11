@@ -42,7 +42,7 @@ pub enum Matcher {
     FixedStrings(FixedStringsMatcher),
 }
 impl Matcher {
-    pub fn new(pattern String, is_fixed_strings_mode: bool) -> Matcher {
+    pub fn new(pattern: String, is_fixed_strings_mode: bool) -> Matcher {
         if is_fixed_strings_mode {
             Matcher::FixedStrings(FixedStringsMatcher::new(pattern.to_string()))
         }
